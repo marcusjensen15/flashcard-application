@@ -36,6 +36,8 @@ class App extends Component{
         <Card eng= {this.state.currentCard.eng}
               spanish= {this.state.currentCard.spanish}
           />
+      </div>
+      <div className="buttonRow">
         <DrawCard/>
       </div>
     </div>
