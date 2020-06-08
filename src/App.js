@@ -10,16 +10,10 @@ class App extends Component{
   constructor(props){
     super(props);
     this.app = firebase.initalizeApp(DB_CONFIG);
+    this.database = this.app.database().ref().child('cards');
 
     this.state = {
-      cards: [
-        {id: 1, eng: "English", spanish: "Spanish"},
-        {id: 2, eng: "English2", spanish: "Spanish2"},
-        {id: 3, eng: "English3", spanish: "Spanish3"},
-        {id: 4, eng: "English4", spanish: "Spanish4"},
-        {id: 5, eng: "English5", spanish: "Spanish5"},
-        {id: 6, eng: "English6", spanish: "Spanish6"}
-      ],
+      cards: [],
       currentCard: {}
     }
   }
