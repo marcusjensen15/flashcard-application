@@ -35,6 +35,9 @@
 .card .back {
   height: 400px;
   width: 400px;
+  backface-visibility: hidden;
+  position: absolute;
+  overflow: hidden;
   text-align: center;
   transform: rotateY(180deg);
 }
