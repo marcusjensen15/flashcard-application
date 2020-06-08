@@ -9,8 +9,15 @@ import 'firebase/database';
 class App extends Component{
   constructor(props){
     super(props);
-    this.app = firebase.initalizeApp(DB_CONFIG);
-    this.database = this.app.database().ref().child('cards');
+
+
+    if (!firebase.apps.length) {
+    firebase.initializeApp(DB_CONFIG);
+}
+
+
+
+    this.database = firebase.database().ref().child('cards');
 
     this.state = {
       cards: [],
@@ -27,11 +34,10 @@ class App extends Component{
         eng: snap.val().eng,
         spanish: snap.val().spanish
       })
-    })
-    
-    this.setState({
-      cards: currentCards,
-      currentCard: this.getRandomCard(currentCards)
+      this.setState({
+        cards: currentCards,
+        currentCard: this.getRandomCard(currentCards)
+      })
     })
   }
 
@@ -41,7 +47,7 @@ class App extends Component{
 
   }
 
-  updateCard = () =>{
+  updateCard = () => {
     const currentCards = this.state.cards;
     this.setState({
       currentCard: this.getRandomCard(currentCards)
