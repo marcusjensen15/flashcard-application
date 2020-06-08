@@ -10,7 +10,11 @@ class App extends Component{
     this.state = {
       cards: [
         {id: 1, eng: "English", spanish: "Spanish"},
-        {id: 2, eng: "English2", spanish: "Spanish2"}
+        {id: 2, eng: "English2", spanish: "Spanish2"},
+        {id: 3, eng: "English3", spanish: "Spanish3"},
+        {id: 4, eng: "English4", spanish: "Spanish4"},
+        {id: 5, eng: "English5", spanish: "Spanish5"},
+        {id: 6, eng: "English6", spanish: "Spanish6"}
       ],
       currentCard: {}
     }
@@ -31,9 +35,12 @@ class App extends Component{
   }
 
   updateCard = () =>{
-    console.log('a new card')
+    const currentCards = this.state.cards;
+    this.setState({
+      currentCard: this.getRandomCard(currentCards)
+    })
   }
-  
+
   render(){
   return (
     <div className="App">
