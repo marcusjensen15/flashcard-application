@@ -6,10 +6,10 @@ const Card = (props) => (
   <div className = "card-container">
     <div className = "card">
       <div className="front">
-        <div className="eng"> English Word </div>
+        <div className="eng"> {props.eng} </div>
       </div>
       <div className="back">
-        <div className="spanish"> Spanish Word</div>
+        <div className="spanish"> {props.spanish} </div>
       </div>
     </div>
   </div>
