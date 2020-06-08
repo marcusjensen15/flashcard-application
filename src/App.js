@@ -32,10 +32,12 @@ class App extends Component{
   render(){
   return (
     <div className="App">
-      <Card eng= {this.state.currentCard.eng}
-            spanish= {this.state.currentCard.spanish}
-        />
-
+      <div className="cardRow">
+        <Card eng= {this.state.currentCard.eng}
+              spanish= {this.state.currentCard.spanish}
+          />
+        <DrawCard/>
+      </div>
     </div>
   );
  }
