@@ -1,26 +1,60 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
+import Card from './Card/Card';
+import DrawButton from './DrawButton/DrawButton';
 
-function App() {
+class App extends Component{
+  constructor(props){
+    super(props);
+
+    this.state = {
+      cards: [
+        {id: 1, eng: "English", spanish: "Spanish"},
+        {id: 2, eng: "English2", spanish: "Spanish2"},
+        {id: 3, eng: "English3", spanish: "Spanish3"},
+        {id: 4, eng: "English4", spanish: "Spanish4"},
+        {id: 5, eng: "English5", spanish: "Spanish5"},
+        {id: 6, eng: "English6", spanish: "Spanish6"}
+      ],
+      currentCard: {}
+    }
+  }
+
+  componentWillMount(){
+    const currentCards = this.state.cards;
+    this.setState({
+      cards: currentCards,
+      currentCard: this.getRandomCard(currentCards)
+    })
+  }
+
+  getRandomCard = (currentCards) => {
+    var card = currentCards[Math.floor(Math.random() * currentCards.length)];
+    return(card);
+
+  }
+
+  updateCard = () =>{
+    const currentCards = this.state.cards;
+    this.setState({
+      currentCard: this.getRandomCard(currentCards)
+    })
+  }
+
+  render(){
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="cardRow">
+        <Card eng= {this.state.currentCard.eng}
+              spanish= {this.state.currentCard.spanish}
+          />
+      </div>
+      <div className="buttonRow">
+        <DrawButton drawCard = {this.updateCard}/>
+      </div>
     </div>
   );
+ }
 }
 
 export default App;
