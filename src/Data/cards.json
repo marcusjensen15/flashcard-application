@@ -1,0 +1,24 @@
+{
+  "cards": [
+    {
+      "id": 1,
+      "eng": "to be",
+      "spanish": "ser"
+    },
+    {
+      "id": 2,
+      "eng": "car",
+      "spanish": "coche"
+    },
+    {
+      "id": 3,
+      "eng": "dog",
+      "spanish": "perro"
+    },
+    {
+      "id": 4,
+      "eng": "computer",
+      "spanish": "computador"
+    }
+  ]
+}
