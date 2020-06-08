@@ -23,6 +23,11 @@ class App extends Component{
     })
   }
 
+  getRandomCard = (currentCards) => {
+    var card = currentCards[Math.floor(Math.random() * currentCards.length)]
+
+  }
+
   render(){
   return (
     <div className="App">
