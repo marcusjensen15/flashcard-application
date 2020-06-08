@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Card from './Card/Card';
+import DrawButton from './DrawButton/DrawButton';
 
 class App extends Component{
   constructor(props){
@@ -29,6 +30,10 @@ class App extends Component{
 
   }
 
+  updateCard = () =>{
+    console.log('a new card')
+  }
+  
   render(){
   return (
     <div className="App">
@@ -38,7 +43,7 @@ class App extends Component{
           />
       </div>
       <div className="buttonRow">
-        <DrawCard/>
+        <DrawButton drawCard = {this.updateCard}/>
       </div>
     </div>
   );
