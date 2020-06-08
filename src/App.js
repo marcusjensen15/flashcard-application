@@ -2,10 +2,14 @@ import React, { Component } from 'react';
 import './App.css';
 import Card from './Card/Card';
 import DrawButton from './DrawButton/DrawButton';
+import { DB_CONFIG } from './Config/Firebase/db_config';
+import firebase from 'firebase/app';
+import 'firebase/database';
 
 class App extends Component{
   constructor(props){
     super(props);
+    this.app = firebase.initalizeApp(DB_CONFIG);
 
     this.state = {
       cards: [
