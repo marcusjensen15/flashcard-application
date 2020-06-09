@@ -1,0 +1,30 @@
+.AddCardContainer{
+  width: 100%;
+}
+
+.inputContainer{
+  width: 10%;
+  height: 40%;
+  padding: 0px;
+  margin-right: 45%;
+  margin-left: 45%;
+  margin-top: 10%;
+  text-align: center;
+}
+
+
+.cardFront{
+  height: 150px;
+  width: 200px;
+  text-align: center;
+}
+
+
+.cardBack{
+  height: 150px;
+  width: 200px;
+  margin-top: 4%;
+  text-align: center;
+}
+
+.deckName{}

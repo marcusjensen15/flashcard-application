@@ -8,9 +8,12 @@ export default function AddCard(){
 
 
 return(
-<div className="instructionsContainer">
-  <textarea type="text" placeholder="Card Front"/>
-  <textarea type="text" placeholder="Card Back"/>
+<div className="AddCardContainer">
+  <div className="inputContainer">
+    <textarea className="cardFront" type="text" placeholder="Card Front"/>
+    <textarea className="cardBack" type="text" placeholder="Card Back"/>
+    <input className="deckName" type="text" placeholder="Deck Name"/>
+  </div>
 </div>
 )
 }
