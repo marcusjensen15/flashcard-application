@@ -9,10 +9,8 @@ export default function AddCard(){
 
 return(
 <div className="instructionsContainer">
-  <input type="text" placeholder="Card Front"/>
-    <input type="text" placeholder="Card Back"/>
-
-
+  <textarea type="text" placeholder="Card Front"/>
+  <textarea type="text" placeholder="Card Back"/>
 </div>
 )
 }
