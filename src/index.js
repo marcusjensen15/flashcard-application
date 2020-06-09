@@ -3,6 +3,14 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { DB_CONFIG } from './Config/Firebase/db_config';
+
+
+const firebase = require('firebase');
+
+
+
+firebase.initializeApp(DB_CONFIG);
 
 ReactDOM.render(
   <React.StrictMode>
