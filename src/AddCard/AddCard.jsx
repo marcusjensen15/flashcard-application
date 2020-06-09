@@ -9,7 +9,10 @@ export default function AddCard(){
 
 return(
 <div className="instructionsContainer">
-  <p>This is the AddCard component</p>
+  <input type="text" placeholder="Card Front"/>
+    <input type="text" placeholder="Card Back"/>
+
+
 </div>
 )
 }
