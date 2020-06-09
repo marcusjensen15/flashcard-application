@@ -2,12 +2,26 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import AddCard from './AddCard/AddCard';
+import { Route, BrowserRouter as Router } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
+import { DB_CONFIG } from './Config/Firebase/db_config';
+
+const firebase = require('firebase');
+firebase.initializeApp(DB_CONFIG);
+
+const routing = (
+  <Router>
+    <div id='routing-container'>
+      <Route path='/addcard' component={AddCard}></Route>
+        <Route path='/home' component={App}></Route>
+
+    </div>
+  </Router>
+);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  routing,
   document.getElementById('root')
 );
 
