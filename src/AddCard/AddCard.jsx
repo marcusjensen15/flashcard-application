@@ -6,10 +6,16 @@ import './AddCard.css'
 export default function AddCard(){
 
 
+  function addNewCard(event) {
+    event.preventDefault();
+    console.log('form was submitted');
+  }
+
+
 
 return(
 <div className="AddCardContainer">
-  <form>
+  <form onSubmit={addNewCard}>
     <div className="addCardTitle">Add a Card</div>
     <div className="inputContainer">
       <textarea className="cardFront" type="text" placeholder="Card Front"/>
