@@ -29,6 +29,7 @@
 
 .deckName{
   margin-top: 5%;
+  text-align: center;
 
 }
 
@@ -36,4 +37,14 @@
   text-align: center;
   margin-top: 10%;
   font-size: 40px;
+}
+
+.submitButtonStyle{
+  margin-top: 10%;
+}
+
+.buttonSize{
+  border-radius: 5px;
+  font-size: 2vh;
+  font-family: 'Ariel';
 }
