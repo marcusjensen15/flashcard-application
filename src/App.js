@@ -59,6 +59,23 @@ class App extends Component{
   //   })
   // }
 
+  handleAddingNewPostToList(newCard){
+    fetch('https://quiet-bayou-85740.herokuapp.com/articles', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        cardFront: newCard.cardFront,
+        cardBack: newCard.cardBack,
+        deckName: newCard.title
+      })
+    })
+  }
+
+
+
   render(){
   return (
     <>
