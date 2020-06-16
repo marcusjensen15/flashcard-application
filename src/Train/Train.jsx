@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
-import Card from './Card/Card';
-import DrawButton from './DrawButton/DrawButton';
+import Card from '../Card/Card';
+import DrawButton from '../DrawButton/DrawButton';
 import firebase from 'firebase/app';
 import 'firebase/database';
-import Train from './Train/Train';
-import { Switch, Route } from 'react-router-dom';
 
 class App extends Component{
   constructor(props){
@@ -50,14 +48,16 @@ class App extends Component{
 
   render(){
   return (
-    <>
-      <Switch>
-        <Route exact path='/' component={Home}/>
-        <Route exact path='/train' component={Train}/>
-        <Route exact path='/addCard' component={AddCard}/>
-      </Switch>
-    </>
-
+    <div className="App">
+      <div className="cardRow">
+        <Card eng= {this.state.currentCard.eng}
+              spanish= {this.state.currentCard.spanish}
+          />
+      </div>
+      <div className="buttonRow">
+        <DrawButton drawCard = {this.updateCard}/>
+      </div>
+    </div>
   );
  }
 }
