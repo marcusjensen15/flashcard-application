@@ -15,7 +15,7 @@ export default function AddCard(){
 
 return(
 <div className="AddCardContainer">
-  <form onSubmit={addNewCard}>
+  <form className="formContainer" onSubmit={addNewCard}>
     <div className="addCardTitle">Add a Card</div>
     <div className="inputContainer">
       <textarea className="cardFront" type="text" placeholder="Card Front"/>

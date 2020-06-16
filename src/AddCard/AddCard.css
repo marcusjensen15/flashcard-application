@@ -2,7 +2,7 @@
   width: 100%;
 }
 
-.inputContainer{
+/* .inputContainer{
   width: 10%;
   height: 40%;
   padding: 0px;
@@ -10,21 +10,22 @@
   margin-left: 45%;
   margin-top: 2%;
   text-align: center;
-}
+} */
 
 
 .cardFront{
   height: 150px;
-  width: 200px;
+  width: 100%;
   text-align: center;
 }
 
 
 .cardBack{
   height: 150px;
-  width: 200px;
+  width: 100%;
   margin-top: 5%;
   text-align: center;
+
 }
 
 .deckName{
@@ -47,4 +48,12 @@
   border-radius: 5px;
   font-size: 2vh;
   font-family: 'Ariel';
+}
+
+.formContainer{
+  width: 20%;
+  margin-right: 40%;
+  margin-left: 40%;
+  text-align: center;
+
 }
