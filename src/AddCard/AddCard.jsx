@@ -10,9 +10,14 @@ export default function AddCard(props){
   let _deckName = null;
 
 
-  function addNewCard(event) {
-    event.preventDefault();
-    console.log('form was submitted');
+function addNewCard(event) {
+  event.preventDefault();
+  
+
+  _cardFront = "";
+  _cardBack= "";
+  _deckName = "";
+
   }
 
 
