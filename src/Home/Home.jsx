@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/resumeStyle.css';
 
 
-export default function Resume(){
+export default function Home(){
 
 
   return(
