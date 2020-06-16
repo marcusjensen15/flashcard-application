@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './App.css';
 import Card from '../Card/Card';
 import DrawButton from '../DrawButton/DrawButton';
 // import firebase from 'firebase/app';
@@ -21,5 +20,3 @@ export default function Train(props){
   );
 
 }
-
-export default Train;
