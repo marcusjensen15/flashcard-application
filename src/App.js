@@ -1,11 +1,22 @@
+//React reqs
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
+
+//components
+
 import Card from './Card/Card';
 import DrawButton from './DrawButton/DrawButton';
+import AddCard from './AddCard/AddCard';
+import Train from './Train/Train';
+import Home from './Home/Home';
+
+
+//api connection
 import firebase from 'firebase/app';
 import 'firebase/database';
-import Train from './Train/Train';
-import { Switch, Route } from 'react-router-dom';
+
+
 
 class App extends Component{
   constructor(props){
