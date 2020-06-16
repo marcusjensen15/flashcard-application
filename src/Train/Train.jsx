@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import Card from '../Card/Card';
 import DrawButton from '../DrawButton/DrawButton';
-import firebase from 'firebase/app';
-import 'firebase/database';
+// import firebase from 'firebase/app';
+// import 'firebase/database';
 
 export default function Train(props){
 

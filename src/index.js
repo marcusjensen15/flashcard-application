@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import AddCard from './AddCard/AddCard';
 import { Route, BrowserRouter as Router } from 'react-router-dom';
 import * as serviceWorker from './serviceWorker';
 import { DB_CONFIG } from './Config/Firebase/db_config';
 import { HashRouter } from 'react-router-dom';
 
 const firebase = require('firebase');
-firebase.initializeApp(DB_CONFIG);
+// firebase.initializeApp(DB_CONFIG);
 
 // const routing = (
 //   <Router>
