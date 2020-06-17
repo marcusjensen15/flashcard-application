@@ -134,25 +134,19 @@ class App extends Component{
 //   console.log(this.state.cards);
 // }
 
-addNewCard = async () => {
-    const location = "http://localhost:4000/cards";
-    const settings = {
-        method: 'POST',
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-        }
-    };
-    try {
-        const fetchResponse = await fetch(location, settings);
-        const data = await fetchResponse.json();
-        return data;
-    } catch (e) {
-        return e;
-    }
+
+addNewCard = (newCard) => {
+  axios.post('http://localhost:4000/cards', {
+    cardFront: newCard.cardFront,
+    cardBack: newCard.cardBack,
+    cardDeck: newCard.cardDeck,
+    user: newCard.user
+  })
+  .then(function (response) {
+    console.log(response);
+  })
 
 }
-
 
 
 
