@@ -15,11 +15,11 @@ export default function AddCard(props){
 
 function addNewCardHandler(event) {
   event.preventDefault();
-  props.addNewCard({cardFront: _cardFront.value, cardBack: _cardBack.value, deckName: _deckName.value});
+  props.addNewCard({cardFront: _cardFront.value, cardBack: _cardBack.value, deckName: _deckName.value, user:null});
 
-  _cardFront = "";
-  _cardBack= "";
-  _deckName = "";
+  _cardFront.value = " ";
+  _cardBack.value = " ";
+  _deckName.value = " ";
 
   }
 

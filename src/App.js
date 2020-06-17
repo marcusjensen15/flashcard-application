@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
+import Axios from 'axios';
 
 //components
 
@@ -60,19 +61,20 @@ class App extends Component{
   // }
 
 //(need to wait until new computer to do api stuff. running back and front end at the same time freezes computer)
-  addNewCard(newCard){
-    fetch('http://localhost:4000/cards', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        cardFront: newCard.cardFront,
-        cardBack: newCard.cardBack,
-        deckName: newCard.title
-      })
-    })
+  addNewCard = async (newCard) => {
+    // await fetch('http://localhost:4000/cards', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     cardFront: newCard.cardFront,
+    //     cardBack: newCard.cardBack,
+    //     deckName: newCard.title,
+    //     user: null
+    //   })
+    // })
+     console.log(newCard);
   }
 
 
