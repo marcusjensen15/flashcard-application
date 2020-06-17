@@ -59,20 +59,20 @@ class App extends Component{
   //   })
   // }
 
-  addNewCard =(newCard) => {
-    // fetch('https://quiet-bayou-85740.herokuapp.com/articles', {
-    //   method: 'POST',
-    //   headers: {
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     cardFront: newCard.cardFront,
-    //     cardBack: newCard.cardBack,
-    //     deckName: newCard.title
-    //   })
-    // })
-    console.log('form submitted');
+//(need to wait until new computer to do api stuff. running back and front end at the same time freezes computer)
+  addNewCard(newCard){
+    fetch('http://localhost:4000/cards', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        cardFront: newCard.cardFront,
+        cardBack: newCard.cardBack,
+        deckName: newCard.title
+      })
+    })
   }
 
 
