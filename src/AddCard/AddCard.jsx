@@ -10,16 +10,16 @@ export default function AddCard(props){
 
   let _cardFront = null;
   let _cardBack= null;
-  let _deckName = null;
+  let _cardDeck = null;
 
 
 function addNewCardHandler(event) {
   event.preventDefault();
-  props.addNewCard({cardFront: _cardFront.value, cardBack: _cardBack.value, deckName: _deckName.value, user:null});
+  props.addNewCard({cardFront: _cardFront.value, cardBack: _cardBack.value, cardDeck: _cardDeck.value, user:null});
 
   _cardFront.value = " ";
   _cardBack.value = " ";
-  _deckName.value = " ";
+  _cardDeck.value = " ";
 
   }
 
@@ -47,7 +47,7 @@ return(
       <input className="deckName"
         type="text"
         placeholder="Deck Name"
-        ref={(input) => {_deckName = input;}}/>
+        ref={(input) => {_cardDeck = input;}}/>
 
 
       <div  className="submitButtonStyle">  <button className="buttonSize" type='submit'>Add Card</button> </div>
