@@ -1,6 +1,7 @@
 import React from 'react';
 import './AddCard.css';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 
 
@@ -26,6 +27,7 @@ function addNewCardHandler(event) {
 
 return(
 <div className="AddCardContainer">
+  <Link to='/train'> Train </Link>
   <form className="formContainer" onSubmit={addNewCardHandler}>
     <div className="addCardTitle">Add a Card</div>
     <div className="inputContainer">
