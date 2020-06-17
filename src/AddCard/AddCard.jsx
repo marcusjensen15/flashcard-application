@@ -1,5 +1,8 @@
 import React from 'react';
-import './AddCard.css'
+import './AddCard.css';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+
 
 
 
@@ -10,13 +13,13 @@ export default function AddCard(props){
   let _deckName = null;
 
 
-function addNewCard(event) {
+function addNewCardHandler(event) {
   event.preventDefault();
-  
+  props.addNewCard({cardFront: _cardFront.value, cardBack: _cardBack.value, deckName: _deckName.value, user:null});
 
-  _cardFront = "";
-  _cardBack= "";
-  _deckName = "";
+  _cardFront.value = " ";
+  _cardBack.value = " ";
+  _deckName.value = " ";
 
   }
 
@@ -24,7 +27,9 @@ function addNewCard(event) {
 
 return(
 <div className="AddCardContainer">
-  <form className="formContainer" onSubmit={addNewCard}>
+  <Link to='/train'> Train </Link>
+  <Link to='/'> Home </Link>
+  <form className="formContainer" onSubmit={addNewCardHandler}>
     <div className="addCardTitle">Add a Card</div>
     <div className="inputContainer">
       <textarea className="cardFront"
@@ -52,3 +57,7 @@ return(
 </div>
 )
 }
+
+AddCard.propTypes = {
+  addNewCard: PropTypes.func
+};

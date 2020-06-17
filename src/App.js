@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './App.css';
+import Axios from 'axios';
 
 //components
 
@@ -11,6 +12,7 @@ import AddCard from './AddCard/AddCard';
 import Train from './Train/Train';
 import Home from './Home/Home';
 
+const axios = require('axios');
 
 //api connection
 // import firebase from 'firebase/app';
@@ -28,6 +30,13 @@ class App extends Component{
       cards: [],
       currentCard: {}
     }
+  }
+
+
+  componentWillMount(){
+    axios.get('http://localhost:4000/cards').then(resp => {
+      console.log(resp.data)
+    })
   }
 
   // componentWillMount(){
@@ -59,20 +68,93 @@ class App extends Component{
   //   })
   // }
 
-  handleAddingNewPostToList(newCard){
-    fetch('https://quiet-bayou-85740.herokuapp.com/articles', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        cardFront: newCard.cardFront,
-        cardBack: newCard.cardBack,
-        deckName: newCard.title
-      })
-    })
-  }
+//(need to wait until new computer to do api stuff. running back and front end at the same time freezes computer). needs to be http, not https
+  // addNewCard(newCard){
+  //    fetch('http://localhost:4000/cards', {
+  //     method: 'POST',
+  //     headers: {
+  //       'Content-Type': 'application/x-www-form-urlencoded'
+  //     },
+  //     body: JSON.stringify({
+  //       cardFront: newCard.cardFront,
+  //       cardBack: newCard.cardBack,
+  //       deckName: newCard.title,
+  //       user: null
+  //     })
+  //   })
+  // };
+
+// addNewCard = async (newCard) => {
+//   await fetch("http://localhost:4000/cards", {
+//
+//     // Adding method type
+//     method: "POST",
+//
+//     // Adding headers to the request
+//
+//     headers: {
+//         "content-type": "application/x-www-form-urlencoded",
+//         "accept": "application/x-www-form-urlencoded"
+//
+//     },
+//
+//     // Adding body or contents to send
+//     body: JSON.stringify({
+//       cardFront: newCard.cardFront,
+//       cardBack: newCard.cardBack,
+//       deckName: newCard.deckName
+//     })
+//
+//
+//
+// })
+//
+// // Converting to JSON
+// .then(response => response.json())
+//
+// // Displaying results to console
+// .then(json => console.log(json));
+//
+//
+// }
+
+
+
+
+
+//get request is throwing the same network/failed to fetch error
+// componentDidMount(){
+//   fetch("http://localhost:4000/cards")
+//   .then(d => d.json())
+//   .then(d => {
+//     this.setState({
+//       cards: d
+//     })
+//   })
+//   console.log(this.state.cards);
+// }
+
+addNewCard = async () => {
+    const location = "http://localhost:4000/cards";
+    const settings = {
+        method: 'POST',
+        headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+        }
+    };
+    try {
+        const fetchResponse = await fetch(location, settings);
+        const data = await fetchResponse.json();
+        return data;
+    } catch (e) {
+        return e;
+    }
+
+}
+
+
+
 
 
 
@@ -82,7 +164,12 @@ class App extends Component{
       <Switch>
         <Route exact path='/' component={Home}/>
         <Route exact path='/train' component={Train}/>
-        <Route exact path='/addCard' component={AddCard}/>
+        <Route
+          exact path='/addCard'
+          render={()=> <AddCard
+          addNewCard = {this.addNewCard}>
+          </AddCard>}
+          />
       </Switch>
     </>
 
