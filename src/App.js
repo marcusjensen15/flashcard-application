@@ -59,19 +59,20 @@ class App extends Component{
   //   })
   // }
 
-  handleAddingNewPostToList(newCard){
-    fetch('https://quiet-bayou-85740.herokuapp.com/articles', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        cardFront: newCard.cardFront,
-        cardBack: newCard.cardBack,
-        deckName: newCard.title
-      })
-    })
+  addNewCard =(newCard) => {
+    // fetch('https://quiet-bayou-85740.herokuapp.com/articles', {
+    //   method: 'POST',
+    //   headers: {
+    //     'Accept': 'application/json',
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify({
+    //     cardFront: newCard.cardFront,
+    //     cardBack: newCard.cardBack,
+    //     deckName: newCard.title
+    //   })
+    // })
+    console.log('form submitted');
   }
 
 
@@ -82,7 +83,12 @@ class App extends Component{
       <Switch>
         <Route exact path='/' component={Home}/>
         <Route exact path='/train' component={Train}/>
-        <Route exact path='/addCard' component={AddCard}/>
+        <Route
+          exact path='/addCard'
+          render={()=> <AddCard
+          addNewCard = {this.addNewCard}>
+          </AddCard>}
+          />
       </Switch>
     </>
 

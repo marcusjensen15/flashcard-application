@@ -1,5 +1,7 @@
 import React from 'react';
-import './AddCard.css'
+import './AddCard.css';
+import PropTypes from 'prop-types';
+
 
 
 
@@ -10,9 +12,9 @@ export default function AddCard(props){
   let _deckName = null;
 
 
-function addNewCard(event) {
+function addNewCardHandler(event) {
   event.preventDefault();
-  
+  props.addNewCard({cardFront: _cardFront.value, cardBack: _cardBack.value, deckName: _deckName.value});
 
   _cardFront = "";
   _cardBack= "";
@@ -24,7 +26,7 @@ function addNewCard(event) {
 
 return(
 <div className="AddCardContainer">
-  <form className="formContainer" onSubmit={addNewCard}>
+  <form className="formContainer" onSubmit={addNewCardHandler}>
     <div className="addCardTitle">Add a Card</div>
     <div className="inputContainer">
       <textarea className="cardFront"
@@ -52,3 +54,7 @@ return(
 </div>
 )
 }
+
+AddCard.propTypes = {
+  addNewCard: PropTypes.func
+};
