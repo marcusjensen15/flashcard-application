@@ -26,11 +26,27 @@ class App extends Component{
   }
 
 
-  componentWillMount(){
-    axios.get('http://localhost:4000/cards').then(resp => {
-      console.log(resp.data)
-    })
+  //picking initial random card
+
+  getRandomCard = (currentCards) => {
+    let randomCardIndex = Math.floor(Math.random() * currentCards.length);
+    let card = currentCards[randomCardIndex];
+    if (card === this.state.currentCard){
+      this.getRandomCard(currentCards);
+    }
+      return(card);
   }
+
+//set 'cards' state inside of componentWillMount
+
+  componentWillMount = async () => {
+    let callCards = await axios.get('http://localhost:4000/cards').then(resp => {
+       return resp.data;
+    })
+    await this.setState({cards: callCards,
+    currentCard: this.getRandomCard(callCards)});
+  }
+
 
 addNewCard = (newCard) => {
   axios.post('http://localhost:4000/cards', {
@@ -40,9 +56,16 @@ addNewCard = (newCard) => {
     user: newCard.user
   })
   .then(function (response) {
-    console.log(response);
   })
 
+}
+
+updateCard = () => {
+  let callCards = this.state.cards;
+  this.setState({
+    cards: callCards,
+    currentCard: this.getRandomCard(callCards)
+  })
 }
 
 
@@ -54,7 +77,12 @@ addNewCard = (newCard) => {
     <>
       <Switch>
         <Route exact path='/' component={Home}/>
-        <Route exact path='/train' component={Train}/>
+        <Route
+          exact path='/train'
+          render={() => <Train
+          cardDetails={this.state.currentCard}
+          updateCard={this.updateCard}/>}
+          />
         <Route
           exact path='/addCard'
           render={()=> <AddCard
