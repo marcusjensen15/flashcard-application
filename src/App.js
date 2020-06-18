@@ -31,8 +31,21 @@ class App extends Component{
     let callCards = await axios.get('http://localhost:4000/cards').then(resp => {
        return resp.data;
     })
-    await this.setState({cards: callCards});
-    console.log(this.state.cards);
+    await this.setState({cards: callCards,
+    currentCard: getRandomCard(currentCards)});
+    // console.log(this.state.cards);
+  }
+
+
+//picking initial random card
+
+  getRandomCard = (currentCards) => {
+    let randomCardIndex = Math.floor(Math.random() * currentCards.length);
+    let card = currentCards[randomCardIndex];
+    if (card === this.state.currentCard){
+      this.getRandomCard(currentCards);
+    }
+      return(card);
   }
 
 addNewCard = (newCard) => {
@@ -46,6 +59,14 @@ addNewCard = (newCard) => {
     console.log(response);
   })
 
+}
+
+updateCard(){
+  const currentCards = this.state.cards;
+  this.setState({
+    cards: currentCards,
+    currentCard: this.getRandomCard(currentCards)
+  })
 }
 
 
