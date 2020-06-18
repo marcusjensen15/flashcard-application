@@ -9,8 +9,7 @@ export default function Train(props){
     <div className="App">
       <div className="cardRow">
         <Card
-          cardFront = {props.cardFront}
-          cardBack = {props.cardBack}
+          cardDetails = {props.cardDetails}
 
           />
       </div>

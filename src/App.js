@@ -45,7 +45,7 @@ class App extends Component{
     })
     await this.setState({cards: callCards,
     currentCard: this.getRandomCard(callCards)});
-    // console.log(this.state);
+    // console.log(this.state.cards);
   }
 
 
@@ -62,12 +62,13 @@ addNewCard = (newCard) => {
 
 }
 
-updateCard(){
-  const callCards = this.state.cards;
+updateCard = () => {
+  let callCards = this.state.cards;
   this.setState({
     cards: callCards,
     currentCard: this.getRandomCard(callCards)
   })
+  // console.log(callCards);
 }
 
 
