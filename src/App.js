@@ -25,11 +25,14 @@ class App extends Component{
     }
   }
 
+//set 'cards' state inside of componentWillMount
 
-  componentWillMount(){
-    axios.get('http://localhost:4000/cards').then(resp => {
-      console.log(resp.data)
+  componentWillMount = async () => {
+    let callCards = await axios.get('http://localhost:4000/cards').then(resp => {
+       return resp.data;
     })
+    await this.setState({cards: callCards});
+    console.log(this.state.cards);
   }
 
 addNewCard = (newCard) => {
