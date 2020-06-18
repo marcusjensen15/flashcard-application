@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Card from '../Card/Card';
 import DrawButton from '../DrawButton/DrawButton';
-import PropTypes from 'prop-types';
+
 
 export default function Train(props){
 
@@ -16,15 +16,7 @@ export default function Train(props){
       <div className="buttonRow">
         <DrawButton updateCard = {props.updateCard}/>
       </div>
-
-      {console.log(props.cardDetails)}
     </div>
   );
 
 }
-
-
-Train.propTypes = {
-  cardDetails: PropTypes.object,
-  updateCard: PropTypes.func
-};

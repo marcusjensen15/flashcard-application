@@ -7,14 +7,11 @@ class DrawButton extends Component{
     super(props);
   }
 
-  drawCard = () => {
-    this.props.updateCard();
-  }
 
   render(props){
     return(
       <div className="buttonContainer">
-        <button className="btn" onClick={this.drawCard}>Draw Card</button>
+        <button className="btn" onClick={this.props.updateCard}>Draw Card</button>
       </div>
     )
   }
