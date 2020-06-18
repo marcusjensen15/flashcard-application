@@ -45,7 +45,7 @@ class App extends Component{
     })
     await this.setState({cards: callCards,
     currentCard: this.getRandomCard(callCards)});
-    console.log(this.state);
+    // console.log(this.state);
   }
 
 
@@ -57,16 +57,16 @@ addNewCard = (newCard) => {
     user: newCard.user
   })
   .then(function (response) {
-    console.log(response);
+    // console.log(response);
   })
 
 }
 
 updateCard(){
-  const currentCards = this.state.cards;
+  const callCards = this.state.cards;
   this.setState({
-    cards: currentCards,
-    currentCard: this.getRandomCard(currentCards)
+    cards: callCards,
+    currentCard: this.getRandomCard(callCards)
   })
 }
 
@@ -79,7 +79,12 @@ updateCard(){
     <>
       <Switch>
         <Route exact path='/' component={Home}/>
-        <Route exact path='/train' component={Train}/>
+        <Route
+          exact path='/train'
+          render={() => <Train
+          cardDetails={this.state.currentCard}
+          updateCard={this.updateCard}/>}
+          />
         <Route
           exact path='/addCard'
           render={()=> <AddCard

@@ -7,7 +7,7 @@ class DrawButton extends Component{
   }
 
   drawCard = () => {
-    this.props.drawCard();
+    this.props.updateCard();
   }
 
   render(props){
