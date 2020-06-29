@@ -58,7 +58,7 @@ addNewCard = (newCard) => {
   })
   .then(function (response) {
   })
-
+  .then(window.location.reload())
 }
 
 updateCard = () => {
