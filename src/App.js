@@ -45,6 +45,7 @@ class App extends Component{
     })
     await this.setState({cards: callCards,
     currentCard: this.getRandomCard(callCards)});
+    await console.log(this.state);
   }
 
 
@@ -57,7 +58,7 @@ addNewCard = (newCard) => {
   })
   .then(function (response) {
   })
-
+  .then(window.location.reload())
 }
 
 updateCard = () => {

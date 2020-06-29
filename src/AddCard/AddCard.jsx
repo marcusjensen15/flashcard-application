@@ -27,8 +27,8 @@ function addNewCardHandler(event) {
 
 return(
 <div className="AddCardContainer">
-  <Link to='/train'> Train </Link>
-  <Link to='/'> Home </Link>
+  <Link className="linkText" to='/train'> Train </Link>
+  <Link className="linkText" to='/'> Home </Link>
   <form className="formContainer" onSubmit={addNewCardHandler}>
     <div className="addCardTitle">Add a Card</div>
     <div className="inputContainer">
