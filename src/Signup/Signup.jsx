@@ -3,57 +3,49 @@ import { Link } from 'react-router-dom';
 
 
 
-class Signup extends Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      email: "",
-      confirmEmail: "",
-      password: "",
-      confirmPassword: ""
-    }
-  }
+export default function Signup(){
 
-  handleSubmit = (event) => {
-    alert('This is the state: ' + this.state.email + this.state.confirmEmail + this.state.password + this.stateconfirmPassword);
+  let email = null;
+  let confirmEmail = null;
+  let password = null;
+  let confirmPassword = null;
+
+
+  function handleSubmit(event){
     event.preventDefault();
-  };
-
-  handleChange = (event) => {
-    this.setState({
-      email: event.target.email,
-      confirmEmail: event.target.confirmEmail,
-      password: event.target.password,
-      confirmPassword: event.target.confirmPassword
+    console.log({
+      email: email.value,
+      confirmEmail: confirmEmail.value,
+      password: password.value,
+      confirmPassword: confirmPassword.value
       });
   };
 
 
-  render(props){
     return(
       <div className="signupContainer">
         <Link className="linkText" to='/'> Home </Link>
 
 
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={handleSubmit}>
           <label>
             Email:
-            <input type="text" value={this.state.email} onChange={this.handleChange} />
+            <input type="text" ref={(input) => {email = input;}}/>
           </label>
 
           <label>
             Confirm Email:
-          <input type="text" value={this.state.confirmEmail} onChange={this.handleChange} />
+          <input type="text" ref={(input) => {confirmEmail = input;}}/>
           </label>
 
           <label>
             Password:
-            <input type="text" value={this.state.password} onChange={this.handleChange} />
+            <input type="text" ref={(input) => {password = input;}}/>
           </label>
 
           <label>
             Confirm Password:
-            <input type="text" value={this.state.confirmPassword} onChange={this.handleChange} />
+            <input type="text" ref={(input) => {confirmPassword = input;}}/>
           </label>
 
 
@@ -61,7 +53,4 @@ class Signup extends Component{
         </form>
       </div>
     )
-  }
 }
-
-export default Signup
