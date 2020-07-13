@@ -11,6 +11,8 @@ import DrawButton from './DrawButton/DrawButton';
 import AddCard from './AddCard/AddCard';
 import Train from './Train/Train';
 import Home from './Home/Home';
+import Signup from './Signup/Signup';
+import Login from './Login/Login';
 
 const axios = require('axios');
 
@@ -90,6 +92,16 @@ updateCard = () => {
           addNewCard = {this.addNewCard}>
           </AddCard>}
           />
+          <Route
+            exact path='/signup'
+            render={()=> <Signup>
+          </Signup>}
+            />
+            <Route
+              exact path='/login'
+              render={()=> <Login>
+              </Login>}
+              />
       </Switch>
     </>
 
