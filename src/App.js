@@ -11,6 +11,7 @@ import DrawButton from './DrawButton/DrawButton';
 import AddCard from './AddCard/AddCard';
 import Train from './Train/Train';
 import Home from './Home/Home';
+import Signup from './Signup/Signup';
 
 const axios = require('axios');
 
@@ -92,9 +93,9 @@ updateCard = () => {
           />
           <Route
             exact path='/signup'
-            render={()=> <AddCard
+            render={()=> <Signup
             addNewCard = {this.addNewCard}>
-            </AddCard>}
+          </Signup>}
             />
             <Route
               exact path='/login'
