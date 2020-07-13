@@ -90,6 +90,18 @@ updateCard = () => {
           addNewCard = {this.addNewCard}>
           </AddCard>}
           />
+          <Route
+            exact path='/signup'
+            render={()=> <AddCard
+            addNewCard = {this.addNewCard}>
+            </AddCard>}
+            />
+            <Route
+              exact path='/login'
+              render={()=> <AddCard
+              addNewCard = {this.addNewCard}>
+              </AddCard>}
+              />
       </Switch>
     </>
 
