@@ -12,6 +12,7 @@ import AddCard from './AddCard/AddCard';
 import Train from './Train/Train';
 import Home from './Home/Home';
 import Signup from './Signup/Signup';
+import Login from './Login/Login';
 
 const axios = require('axios');
 
@@ -93,15 +94,13 @@ updateCard = () => {
           />
           <Route
             exact path='/signup'
-            render={()=> <Signup
-            addNewCard = {this.addNewCard}>
+            render={()=> <Signup>
           </Signup>}
             />
             <Route
               exact path='/login'
-              render={()=> <AddCard
-              addNewCard = {this.addNewCard}>
-              </AddCard>}
+              render={()=> <Login>
+              </Login>}
               />
       </Switch>
     </>

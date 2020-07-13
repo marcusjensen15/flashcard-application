@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
+import './Login.css';
 
 
-
-class Signup extends Component{
+class Login extends Component{
   constructor(props){
     super(props);
   }
@@ -10,11 +10,11 @@ class Signup extends Component{
 
   render(props){
     return(
-      <div className="signupContainer">
-        <p >Signup Page</p>
+      <div className="loginContainer">
+        <p >Login Page</p>
       </div>
     )
   }
 }
 
-export default Signup
+export default Login
