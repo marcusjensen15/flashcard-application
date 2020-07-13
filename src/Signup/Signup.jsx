@@ -19,6 +19,11 @@ export default function Signup(){
       password: password.value,
       confirmPassword: confirmPassword.value
       });
+
+      email.value = '';
+      confirmEmail.value = '';
+      password.value = '';
+      confirmPassword.value = '';
   };
 
 
