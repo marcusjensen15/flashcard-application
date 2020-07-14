@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+
 
 
 
@@ -9,6 +10,7 @@ export default function Signup(){
   let confirmEmail = null;
   let password = null;
   let confirmPassword = null;
+  let history = useHistory();
 
 
   function handleSubmit(event){
@@ -24,6 +26,8 @@ export default function Signup(){
       confirmEmail.value = '';
       password.value = '';
       confirmPassword.value = '';
+
+      history.push("/train");
   };
 
 
