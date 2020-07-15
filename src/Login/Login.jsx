@@ -31,17 +31,17 @@ export default function Login(){
         <Link className="linkText" to='/'> Home </Link>
         <h2 className="loginTitle">Login</h2>
         <form onSubmit={handleSubmit}>
-          <label>
+          <label className="inputContainer">
             Email:
             <input type="text" ref={(input) => {email = input;}}/>
           </label>
 
-          <label>
+          <label className="inputContainer">
             Password:
             <input type="text" ref={(input) => {password = input;}}/>
           </label>
 
-          <input type="submit" value="Submit" />
+          <input className="buttonContainer" type="submit" value="Submit" />
         </form>
       </div>
     )
