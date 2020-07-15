@@ -41,29 +41,29 @@ export default function Signup(){
           <form onSubmit={handleSubmit}>
             <div className="inputContainer">
               <label>
-                Email:
-                <input type="text" ref={(input) => {email = input;}}/>
+                Email
+                <input className="textInput" type="text" ref={(input) => {email = input;}}/>
               </label>
             </div>
 
             <div className="inputContainer">
               <label className="inputContainer">
-                Confirm Email:
-              <input type="text" ref={(input) => {confirmEmail = input;}}/>
+                Confirm Email
+              <input className="textInput" type="text" ref={(input) => {confirmEmail = input;}}/>
               </label>
             </div>
 
             <div className="inputContainer">
               <label className="inputContainer">
-                Password:
-                <input type="text" ref={(input) => {password = input;}}/>
+                Password
+                <input className="textInput" type="text" ref={(input) => {password = input;}}/>
               </label>
             </div>
-            
+
             <div className="inputContainer">
               <label className="inputContainer">
-                Confirm Password:
-                <input type="text" ref={(input) => {confirmPassword = input;}}/>
+                Confirm Password
+                <input className="textInput" type="text" ref={(input) => {confirmPassword = input;}}/>
               </label>
             </div>
 
