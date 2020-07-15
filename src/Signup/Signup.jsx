@@ -37,30 +37,40 @@ export default function Signup(){
         <Link className="linkText" to='/'> Home </Link>
         <h2 className="signupTitle">Signup</h2>
 
-        <form onSubmit={handleSubmit}>
-          <label className="inputContainer">
-            Email:
-            <input type="text" ref={(input) => {email = input;}}/>
-          </label>
+        <div className="formContainer">
+          <form onSubmit={handleSubmit}>
+            <div className="inputContainer">
+              <label>
+                Email:
+                <input type="text" ref={(input) => {email = input;}}/>
+              </label>
+            </div>
 
-          <label className="inputContainer">
-            Confirm Email:
-          <input type="text" ref={(input) => {confirmEmail = input;}}/>
-          </label>
+            <div className="inputContainer">
+              <label className="inputContainer">
+                Confirm Email:
+              <input type="text" ref={(input) => {confirmEmail = input;}}/>
+              </label>
+            </div>
 
-          <label className="inputContainer">
-            Password:
-            <input type="text" ref={(input) => {password = input;}}/>
-          </label>
+            <div className="inputContainer">
+              <label className="inputContainer">
+                Password:
+                <input type="text" ref={(input) => {password = input;}}/>
+              </label>
+            </div>
+            
+            <div className="inputContainer">
+              <label className="inputContainer">
+                Confirm Password:
+                <input type="text" ref={(input) => {confirmPassword = input;}}/>
+              </label>
+            </div>
 
-          <label className="inputContainer">
-            Confirm Password:
-            <input type="text" ref={(input) => {confirmPassword = input;}}/>
-          </label>
 
-
-          <input type="submit" value="Submit" />
-        </form>
+            <input className="buttonContainer" type="submit" value="Submit" />
+          </form>
+      </div>
       </div>
     )
 }
