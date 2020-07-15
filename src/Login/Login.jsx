@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link, useHistory } from 'react-router-dom';
+import '../scss/_login.scss'
 
 
 
@@ -28,8 +29,7 @@ export default function Login(){
     return(
       <div className="loginContainer">
         <Link className="linkText" to='/'> Home </Link>
-
-
+        <h2 className="loginTitle">Login</h2>
         <form onSubmit={handleSubmit}>
           <label>
             Email:
