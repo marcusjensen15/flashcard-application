@@ -1,7 +1,7 @@
 import React from 'react';
-import './AddCard.css';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import '../scss/_addCard.scss'
 
 
 
