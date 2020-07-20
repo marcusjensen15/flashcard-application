@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import '../scss/_login.scss'
+import '../scss/_loginSignup.scss';
+
 
 
 
@@ -27,19 +28,22 @@ export default function Login(){
 
 
     return(
-      <div className="loginContainer">
+      <div className="signupContainer">
         <Link className="linkText" to='/'> Home </Link>
-        <h2 className="loginTitle">Login</h2>
-        <form onSubmit={handleSubmit}>
-          <label className="inputContainer">
-            Email:
-            <input type="text" ref={(input) => {email = input;}}/>
-          </label>
-
-          <label className="inputContainer">
-            Password:
-            <input type="text" ref={(input) => {password = input;}}/>
-          </label>
+        <h2 className="signupTitle">Login</h2>
+        <form className="formContainer" onSubmit={handleSubmit}>
+          <div className="inputContainer">
+            <label className="inputContainer">
+              Email:
+              <input className="textInput" type="text" ref={(input) => {email = input;}}/>
+            </label>
+          </div>
+          <div className="inputContainer">
+            <label className="inputContainer">
+              Password:
+              <input className="textInput"type="text" ref={(input) => {password = input;}}/>
+            </label>
+          </div>
 
           <input className="buttonContainer" type="submit" value="Submit" />
         </form>
