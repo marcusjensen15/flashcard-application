@@ -27,11 +27,13 @@ function addNewCardHandler(event) {
 
 return(
 <div className="addCardContainer">
-  <Link className="linkText" to='/train'> Train </Link>
-  <Link className="linkText" to='/'> Home </Link>
-  <h2 className="addCardTitle">Add a Card</h2>
-  <form className="formContainer" onSubmit={addNewCardHandler}>
-    <div className="inputContainer">
+  <div className="headerContainer">
+    <Link className="linkText" to='/train'> Train </Link>
+    <Link className="linkText" to='/'> Home </Link>
+  </div>
+  <form className="addCardformContainer" onSubmit={addNewCardHandler}>
+    <h2 className="addCardTitle">Add a Card</h2>
+
       <textarea className="cardFront"
         type="text"
         placeholder="Card Front"
@@ -52,7 +54,7 @@ return(
 
       <div  className="submitButtonStyle">  <button className="buttonSize" type='submit'>Add Card</button> </div>
 
-    </div>
+  
   </form>
 </div>
 )
