@@ -29,8 +29,8 @@ return(
 <div className="addCardContainer">
   <Link className="linkText" to='/train'> Train </Link>
   <Link className="linkText" to='/'> Home </Link>
+  <h2 className="addCardTitle">Add a Card</h2>
   <form className="formContainer" onSubmit={addNewCardHandler}>
-    <div className="addCardTitle">Add a Card</div>
     <div className="inputContainer">
       <textarea className="cardFront"
         type="text"
