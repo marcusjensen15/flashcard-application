@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import '../scss/_addCard.scss'
+import '../scss/_addCard.scss';
+import Header from '../Header/Header';
 
 
 
@@ -27,10 +28,7 @@ function addNewCardHandler(event) {
 
 return(
 <div className="addCardContainer">
-  <div className="headerContainer">
-    <Link className="linkText" to='/train'> Train </Link>
-    <Link className="linkText" to='/'> Home </Link>
-  </div>
+  <Header/>
   <form className="addCardformContainer" onSubmit={addNewCardHandler}>
     <h2 className="addCardTitle">Add a Card</h2>
 
@@ -54,7 +52,7 @@ return(
 
       <div  className="submitButtonStyle">  <button className="buttonSize" type='submit'>Add Card</button> </div>
 
-  
+
   </form>
 </div>
 )
