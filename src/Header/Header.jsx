@@ -6,8 +6,8 @@ import '../scss/_header.scss';
 
 export default function Header(){
 
-
-  return(
+  const LoggedInHeader = () => {
+    return(
     <div className="headerContainer">
       <div className="linkContainer">
         <Link className="linkStyle" to='/train'> Train </Link>
@@ -16,5 +16,22 @@ export default function Header(){
         <Link className="linkStyle" to='/signup'> Signup </Link>
       </div>
     </div>
+  )};
+
+  const LoggedOutHeader = () => {
+    return(
+      <div className="headerContainer">
+        <div className="linkContainer">
+          <Link className="linkStyle" to='/login'> Login </Link>
+          <Link className="linkStyle" to='/signup'> Signup </Link>
+        </div>
+      </div>
+  )};
+
+
+
+
+  return(
+    <LoggedInHeader/>
   );
 }
