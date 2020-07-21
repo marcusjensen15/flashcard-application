@@ -4,7 +4,9 @@ import '../scss/_header.scss';
 
 
 
-export default function Header(){
+export default function Header(props){
+
+  let isLoggedIn = props.isLoggedIn;
 
   const LoggedInHeader = () => {
     return(
@@ -28,10 +30,17 @@ export default function Header(){
       </div>
   )};
 
+  const PresentedHeader = () => {
+    if (isLoggedIn){
+      return <LoggedInHeader/>
+    }
+    return <LoggedOutHeader/>
+  };
+
 
 
 
   return(
-    <LoggedInHeader/>
+      <PresentedHeader/>
   );
 }

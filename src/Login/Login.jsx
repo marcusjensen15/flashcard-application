@@ -6,7 +6,7 @@ import Header from '../Header/Header';
 
 
 
-export default function Login(){
+export default function Login(props){
 
   let email = null;
   let password = null;
@@ -30,7 +30,7 @@ export default function Login(){
 
     return(
       <div className="signupContainer">
-        <Header/>
+        <Header isLoggedIn={props.isLoggedIn}/>
         <h2 className="signupTitle">Login</h2>
         <form className="formContainer" onSubmit={handleSubmit}>
           <div className="inputContainer">

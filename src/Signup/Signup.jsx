@@ -6,7 +6,7 @@ import Header from '../Header/Header';
 
 
 
-export default function Signup(){
+export default function Signup(props){
 
   let email = null;
   let confirmEmail = null;
@@ -35,7 +35,7 @@ export default function Signup(){
 
     return(
       <div className="signupContainer">
-        <Header/>
+        <Header isLoggedIn={props.isLoggedIn}/>
         <h2 className="signupTitle">Signup</h2>
 
         <div className="formContainer">
