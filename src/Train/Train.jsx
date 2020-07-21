@@ -10,7 +10,7 @@ export default function Train(props){
 
   return (
     <div className="App">
-      <Header/>
+      <Header isLoggedIn={props.isLoggedIn}/>
       <h2 className="trainTitle">Train</h2>
       <div className="cardRow">
         <Card

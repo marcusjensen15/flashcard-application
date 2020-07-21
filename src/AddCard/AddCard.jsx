@@ -28,7 +28,7 @@ function addNewCardHandler(event) {
 
 return(
 <div className="addCardContainer">
-  <Header/>
+  <Header isLoggedIn={props.isLoggedIn}/>
   <form className="addCardformContainer" onSubmit={addNewCardHandler}>
     <h2 className="addCardTitle">Add a Card</h2>
 
@@ -59,5 +59,6 @@ return(
 }
 
 AddCard.propTypes = {
-  addNewCard: PropTypes.func
+  addNewCard: PropTypes.func,
+  isLoggedIn: PropTypes.bool
 };

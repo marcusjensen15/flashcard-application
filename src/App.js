@@ -23,7 +23,8 @@ class App extends Component{
 
     this.state = {
       cards: [],
-      currentCard: {}
+      currentCard: {},
+      isLoggedIn: true
     }
   }
 
@@ -80,28 +81,29 @@ updateCard = () => {
     <>
       <Switch>
         <Route exact path='/' component={Home}/>
-        <Route
-          exact path='/train'
-          render={() => <Train
-          cardDetails={this.state.currentCard}
-          updateCard={this.updateCard}/>}
-          />
-        <Route
-          exact path='/addCard'
-          render={()=> <AddCard
-          addNewCard = {this.addNewCard}>
-          </AddCard>}
-          />
+          <Route
+            exact path='/train'
+            render={() => <Train
+              cardDetails={this.state.currentCard}
+              updateCard={this.updateCard}
+              isLoggedIn={this.state.isLoggedIn}/>
+        }/>
+          <Route
+            exact path='/addCard'
+            render={()=> <AddCard
+              addNewCard = {this.addNewCard}
+              isLoggedIn={this.state.isLoggedIn}/>
+        }/>
           <Route
             exact path='/signup'
-            render={()=> <Signup>
-          </Signup>}
-            />
-            <Route
-              exact path='/login'
-              render={()=> <Login>
-              </Login>}
-              />
+            render={()=> <Signup
+              isLoggedIn={this.state.isLoggedIn}/>
+        }/>
+          <Route
+            exact path='/login'
+            render={()=> <Login
+              isLoggedIn={this.state.isLoggedIn}/>
+        }/>
       </Switch>
     </>
 
