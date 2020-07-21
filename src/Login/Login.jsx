@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import '../scss/_loginSignup.scss';
+import Header from '../Header/Header';
 
 
 
@@ -29,7 +30,7 @@ export default function Login(){
 
     return(
       <div className="signupContainer">
-        <Link className="linkText" to='/'> Home </Link>
+        <Header/>
         <h2 className="signupTitle">Login</h2>
         <form className="formContainer" onSubmit={handleSubmit}>
           <div className="inputContainer">
