@@ -3,7 +3,7 @@ import Card from '../Card/Card';
 import DrawButton from '../DrawButton/DrawButton';
 import { Link } from 'react-router-dom';
 import Header from '../Header/Header';
-import '../scss/_train.scss';
+import '../../scss/_train.scss';
 
 
 export default function Train(props){

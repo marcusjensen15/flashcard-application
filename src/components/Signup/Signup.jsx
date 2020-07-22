@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, useHistory } from 'react-router-dom';
-import '../scss/_loginSignup.scss';
+import '../../scss/_loginSignup.scss';
 import Header from '../Header/Header';
 
 
