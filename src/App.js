@@ -6,13 +6,13 @@ import Axios from 'axios';
 
 //components
 
-import Card from './Card/Card';
-import DrawButton from './DrawButton/DrawButton';
-import AddCard from './AddCard/AddCard';
-import Train from './Train/Train';
-import Home from './Home/Home';
-import Signup from './Signup/Signup';
-import Login from './Login/Login';
+import Card from './components/Card/Card';
+import DrawButton from './components/DrawButton/DrawButton';
+import AddCard from './components/AddCard/AddCard';
+import Train from './components/Train/Train';
+import Home from './components/Home/Home';
+import Signup from './components/Signup/Signup';
+import Login from './components/Login/Login';
 
 const axios = require('axios');
 
