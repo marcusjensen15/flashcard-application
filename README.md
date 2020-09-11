@@ -45,6 +45,10 @@ Logout function will occur on the frontend, not the backend.
 
 # To Dos
 
+Check out this resource, it walks through a lot of the following tasks below:
+
+https://hasura.io/blog/best-practices-of-using-jwt-with-graphql/
+
 1. Make login call to backend API. Store token and change state var isLoggedIn to true. We can maybe protect routes with this by making sure the user is logged in when trying to go to other areas of the app.
 
 2. If login fails, it would be nice to have the accurate error message response instead of just '400 Error' (Incorrect password, act does not exist, etc)
