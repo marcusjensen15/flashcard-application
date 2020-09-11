@@ -42,3 +42,17 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 Connect this front-end to this: https://github.com/marcusjensen15/jwt-flashcard-app-backend
 Logout function will occur on the frontend, not the backend. 
+
+# To Dos
+
+1. Make login call to backend API. Store token and change state var isLoggedIn to true. We can maybe protect routes with this by making sure the user is logged in when trying to go to other areas of the app.
+
+2. If login fails, it would be nice to have the accurate error message response instead of just '400 Error' (Incorrect password, act does not exist, etc)
+
+3. Push to '/train' only if login is successful. Otherwise return back to login and display correct error message.
+
+4. JWT token appears to be the exact same every time. figure out why this is.
+
+5. Store the sucessfull log-in token as a state variable, when making requests to the api, we will need to include this var as a header value in each request.
+
+6. On logout, set token value to null. User can now only access a couple routes without being logged in. 
